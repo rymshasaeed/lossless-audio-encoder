@@ -13,7 +13,7 @@ sd.play(audio, sample_rate)
 
 # Encode the audio file and write as .exx2
 idx = filepath.find(".wav")
-encoded_file = filepath[:idx] + "_Enc.txt"
+encoded_file = filepath[:idx] + "_Enc.exx2"
 M = 4
 with open(encoded_file, 'wb') as codedfile:
     for i in range(len(audio)):
@@ -34,6 +34,6 @@ print('Playing decoded audio...!')
 sd.play(decoded_audio, sample_rate)
 
 # Write decoded audio file in .wav format
-idx = encoded_file.find(".txt")
+idx = encoded_file.find(".exx2")
 decoded_file = encoded_file[:idx] + "_Dec.wav"
 wavfile.write(decoded_file, sample_rate, decoded_audio)
